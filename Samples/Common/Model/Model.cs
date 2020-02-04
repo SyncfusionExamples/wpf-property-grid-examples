@@ -335,7 +335,7 @@ namespace PropertyGrid_WPF
                     ValidatesOnExceptions = true,
                     ValidatesOnDataErrors = true
                 };
-                BindingOperations.SetBinding(maskededit, UpDown.ValueProperty, binding);
+                BindingOperations.SetBinding(maskededit, SfMaskedEdit.ValueProperty, binding);
             }
             else
             {
@@ -347,7 +347,7 @@ namespace PropertyGrid_WPF
                     ValidatesOnExceptions = true,
                     ValidatesOnDataErrors = true
                 };
-                BindingOperations.SetBinding(maskededit, UpDown.ValueProperty, binding);
+                BindingOperations.SetBinding(maskededit, SfMaskedEdit.ValueProperty, binding);
             }
         }
 
