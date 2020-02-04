@@ -4,7 +4,7 @@ This repository contains the samples that demonstrate the functionalities of Pro
 
 <table>
  <tr>
-  <td><a href="Samples/CategoryEditor">CategoryEditor Customisation</a></td>
+  <td><a href="Samples/CategoryEditor">CategoryEditor Customization</a></td>
   <td><a href="Samples/Common">Over all features</a></td>
  </tr>
 </table>
