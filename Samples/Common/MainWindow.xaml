@@ -1,0 +1,121 @@
+﻿<Window x:Class="PropertyGrid_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PropertyGrid_WPF"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:componentmodel="clr-namespace:System.ComponentModel;assembly=System"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="MainWindow" Width="900"  Height="640" FontFamily="Calibri" FontSize="13">
+    <Window.DataContext>
+        <local:ViewModel></local:ViewModel>
+    </Window.DataContext>
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+        <Border Margin="0"  Grid.Row="1">
+            <Grid>
+                <syncfusion:PropertyGrid x:Name="propertyGrid1" Margin="20"
+                                         SelectedObject="{Binding SelectedEmployee}"
+                                         HorizontalAlignment="Stretch"
+                                         BorderThickness="1" Background="White"
+                                         EnableToolTip="{Binding EnableToolTip, Mode=TwoWay}"                                         
+                                         ButtonPanelVisibility="{Binding ButtonPanelVisibility, Mode=TwoWay}"                                          
+                                         SearchBoxVisibility="{Binding SearchBoxVisibility, Mode=TwoWay}"
+                                         PropertyExpandMode="{Binding PropertyExpandMode, Mode=TwoWay}"
+                                         DescriptionPanelVisibility="{Binding DescriptionPanelVisibility, Mode=TwoWay}" 
+                                         EnableGrouping="{Binding EnableGrouping , Mode=TwoWay}"
+                                         VerticalAlignment="Stretch"  
+                                         DefaultPropertyPath="Name" Grid.Row="2" >
+                    <i:Interaction.Behaviors>
+                        <local:EventToCommandBehavior PassArguments="True" Event="AutoGeneratingPropertyGridItem" Command="{Binding Path=AutoGeneratingPropertyGridItemEventCommand}" />
+                    </i:Interaction.Behaviors>
+                    <syncfusion:PropertyGrid.CategoryEditors>
+                        <syncfusion:CategoryEditor Category="Contact Details" Description="This is text" DisplayName="Text Properties">
+                            <syncfusion:CategoryEditor.Properties>
+                                <syncfusion:CategoryEditorProperty Name="EmailID"/>
+                                <syncfusion:CategoryEditorProperty Name="MobileNo"/>
+                            </syncfusion:CategoryEditor.Properties>
+                            <syncfusion:CategoryEditor.EditorTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBox Margin="5" Text="{Binding Path=CategoryValueProperties[EmailID].Value,Mode=TwoWay}"></TextBox>
+                                        <TextBox Margin="5" Text="{Binding Path=CategoryValueProperties[MobileNo].Value,Mode=TwoWay}"></TextBox>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </syncfusion:CategoryEditor.EditorTemplate>
+                        </syncfusion:CategoryEditor>
+                    </syncfusion:PropertyGrid.CategoryEditors>
+                </syncfusion:PropertyGrid>
+            </Grid>
+        </Border>
+
+        <GroupBox Margin="0,0,3,3" FontWeight="Bold" FontSize="14" FontFamily="Segoe UI" Grid.Column="1" BorderBrush="Silver" Header="User Options">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="150" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Button Panel Visibility" Grid.Row="0" VerticalAlignment="Center" Grid.Column="0"/>
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="0" Grid.Column="1" SelectedValue="{Binding ButtonPanelVisibility, Mode=TwoWay}"  SelectedIndex="0" VerticalAlignment="Center" Margin="3" Name="button" >
+                    <Visibility>Visible</Visibility>
+                    <Visibility>Collapsed</Visibility>
+                </ComboBox>
+
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Search Box Visibility"  Grid.Row="1" />
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="1" Grid.Column="1" SelectedValue="{Binding SearchBoxVisibility, Mode=TwoWay}"  SelectedIndex="0" Margin="3" Name="search" >
+                <Visibility>Visible</Visibility>
+                <Visibility>Collapsed</Visibility>
+                </ComboBox>                
+
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Description Panel Visibility"  Grid.Row="2"  Grid.Column="0"/>
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="2" Grid.Column="1" SelectedValue="{Binding DescriptionPanelVisibility, Mode=TwoWay}" SelectedIndex="0" Margin="3" Name="description" >
+                <Visibility>Visible</Visibility>
+                <Visibility>Collapsed</Visibility>
+                </ComboBox>                
+                
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Nested Property Mode"  Grid.Row="3"  Grid.Column="0"/>
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="3" Grid.Column="1" SelectedValue="{Binding PropertyExpandMode, Mode=TwoWay}"  SelectedIndex="1" Margin="3" Name="nestedProperties"  >
+                    <syncfusion:PropertyExpandModes>NestedMode</syncfusion:PropertyExpandModes>
+                    <syncfusion:PropertyExpandModes>FlatMode</syncfusion:PropertyExpandModes>
+                </ComboBox>                
+
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Sorting Direction"  Grid.Row="4"  Grid.Column="0"/>
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="4" Grid.Column="1"  SelectedIndex="1" Margin="3" Name="sorting"  >                  
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <local:OrderingAction TargetObject="{Binding ElementName=propertyGrid1}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <ComboBoxItem>Custom Order</ComboBoxItem>
+                    <ComboBoxItem>Ascending</ComboBoxItem>
+                    <ComboBoxItem>Descending</ComboBoxItem>
+                </ComboBox>
+                
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Enable Grouping"  Grid.Row="5"  Grid.Column="0"/>
+                <CheckBox  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="5" Grid.Column="1" IsChecked="{Binding EnableGrouping, Mode=TwoWay}"  Margin="5" Name="grouping"  />
+                
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Enable ToolTip"  Grid.Row="7"  Grid.Column="0"/>
+                <CheckBox  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="7" Grid.Column="1" IsChecked="{Binding EnableToolTip, Mode=TwoWay}"  Margin="5" Name="tooltip"  />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
