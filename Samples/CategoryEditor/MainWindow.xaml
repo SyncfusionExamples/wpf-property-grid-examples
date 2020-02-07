@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <syncfusion:PropertyGrid Margin="20" Grid.Column="0" Name="propertyGrid1" SelectedObject="{Binding ElementName=button}" EnableGrouping="True" >
             <syncfusion:PropertyGrid.CategoryEditors>
-                <syncfusion:CategoryEditor Category="Brushes">
+                <syncfusion:CategoryEditor Category="A-Brushes">
                     <syncfusion:CategoryEditor.Properties>
                         <syncfusion:CategoryEditorProperty Name="Background"/>
                         <syncfusion:CategoryEditorProperty Name="Foreground"/>
