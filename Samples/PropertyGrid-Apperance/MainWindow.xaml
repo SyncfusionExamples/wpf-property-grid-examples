@@ -1,0 +1,27 @@
+﻿<Window x:Class="PropertyGrid_Apperance.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PropertyGrid_Apperance"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="450" Width="500">
+    <Window.DataContext>
+        <local:ViewModel></local:ViewModel>
+    </Window.DataContext>
+    <Grid>
+        <syncfusion:PropertyGrid x:Name="propertyGrid" 
+                                 SelectedObject="{Binding SelectedEmployee}"
+                                 EditableBackground="LightGreen"
+                                 EditableFontWeight="Bold"
+                                 ReadOnlyBackground="LightPink"
+                                 ReadOnlyFontWeight="UltraLight"
+                                 LineColor="Cyan"
+                                 CategoryForeground="OrangeRed"
+                                 EnableGrouping="True"
+                                 Grid.Column="0"
+                                 Margin="20">
+        </syncfusion:PropertyGrid>
+    </Grid>
+</Window>
