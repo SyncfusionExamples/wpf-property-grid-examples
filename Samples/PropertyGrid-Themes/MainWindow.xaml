@@ -11,22 +11,36 @@
     <Window.DataContext>
         <local:ViewModel></local:ViewModel>
     </Window.DataContext>
-    <Grid>
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <syncfusion:PropertyGrid x:Name="propertyGrid" SelectedObject="{Binding SelectedEmployee}" Grid.Column="0" Margin="20">
-        </syncfusion:PropertyGrid>
-        <StackPanel Grid.Column="1" Margin="90" HorizontalAlignment="Center" >
-            <TextBlock FontWeight="Bold" Text="Choose Theme" Width="100" Height="30" ></TextBlock>
-            <ComboBox Name="combo" ItemsSource="{Binding Themes}" Width="200" Height="30" >
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="SelectionChanged">
-                        <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding ElementName=combo}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </ComboBox>
-        </StackPanel>
+
+        <Border Margin="0"  Grid.Row="1">
+            <Grid>
+                <syncfusion:PropertyGrid
+                    SelectedObject="{Binding SelectedEmployee}" 
+                    x:Name="propertyGrid"
+                    Grid.Column="0" Width="350"
+                    Margin="20"/>
+            </Grid>
+        </Border>
+        <GroupBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,3,3" FontWeight="Bold" FontSize="14" FontFamily="Segoe UI" Grid.Column="1" BorderBrush="Silver" Header="User Option">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition  ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Choose Theme" Grid.Column="0"/>
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Column="1"  Name="combo" ItemsSource="{Binding Themes}" Width="200" Height="30" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}" CommandParameter="{Binding ElementName=combo}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>

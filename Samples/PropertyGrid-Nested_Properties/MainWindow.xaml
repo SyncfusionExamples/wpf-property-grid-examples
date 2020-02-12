@@ -6,23 +6,38 @@
         xmlns:local="clr-namespace:PropertyGrid_Nested_Properties"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="450" Width="650">
+        Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
         <local:ViewModel></local:ViewModel>
     </Window.DataContext>
-
-    <Grid>
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <syncfusion:PropertyGrid PropertyExpandMode="{Binding PropertyExpandMode, Mode=TwoWay}" SelectedObject="{Binding SelectedEmployee }" Grid.Column="0" Name="propertyGrid1" Height="300" Width="400" />
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
-            <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Nested Property Mode" />
-            <ComboBox FontWeight="Bold" FontFamily="Segoe UI" FontSize="13" SelectedValue="{Binding PropertyExpandMode, Mode=TwoWay}"  Margin="3" Name="nestedProperties"  >
-                <syncfusion:PropertyExpandModes>NestedMode</syncfusion:PropertyExpandModes>
-                <syncfusion:PropertyExpandModes>FlatMode</syncfusion:PropertyExpandModes>
-            </ComboBox>
-        </StackPanel>
+
+        <Border Margin="0"  Grid.Row="1">
+            <Grid>
+                <syncfusion:PropertyGrid PropertyExpandMode="{Binding PropertyExpandMode, Mode=TwoWay}"
+                                         SelectedObject="{Binding SelectedEmployee }" 
+                                         Name="propertyGrid1" 
+                                         Height="300"
+                                         Width="400" />
+            </Grid>
+        </Border>
+        <GroupBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,3,3" FontWeight="Bold" FontSize="14" FontFamily="Segoe UI" Grid.Column="1" BorderBrush="Silver" Header="User Options">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="150" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Nested Property Mode" Grid.Column="0"/>
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Column="1" SelectedValue="{Binding PropertyExpandMode, Mode=TwoWay}"  SelectedIndex="1" Margin="3" Name="nestedProperties"  >
+                    <syncfusion:PropertyExpandModes>NestedMode</syncfusion:PropertyExpandModes>
+                    <syncfusion:PropertyExpandModes>FlatMode</syncfusion:PropertyExpandModes>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>

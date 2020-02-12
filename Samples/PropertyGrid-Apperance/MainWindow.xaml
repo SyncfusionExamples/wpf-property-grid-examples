@@ -6,12 +6,20 @@
         xmlns:local="clr-namespace:PropertyGrid_Apperance"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="450" Width="500">
+        Title="MainWindow" Height="450" Width="700">
     <Window.DataContext>
         <local:ViewModel></local:ViewModel>
     </Window.DataContext>
-    <Grid>
-        <syncfusion:PropertyGrid x:Name="propertyGrid" 
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Margin="0"  Grid.Row="1">
+            <Grid>
+                <syncfusion:PropertyGrid x:Name="propertyGrid" 
                                  SelectedObject="{Binding SelectedEmployee}"
                                  EditableBackground="LightGreen"
                                  EditableFontWeight="Bold"
@@ -19,9 +27,23 @@
                                  ReadOnlyFontWeight="UltraLight"
                                  LineColor="Cyan"
                                  CategoryForeground="OrangeRed"
+                                 EnableToolTip="{Binding EnableToolTip, Mode=TwoWay}" 
                                  EnableGrouping="True"
                                  Grid.Column="0"
                                  Margin="20">
-        </syncfusion:PropertyGrid>
+                </syncfusion:PropertyGrid>
+            </Grid>
+        </Border>
+        <GroupBox HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,3,3" FontWeight="Bold" FontSize="14" FontFamily="Segoe UI" Grid.Column="1" BorderBrush="Silver" Header="User Options">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="150" ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Enable ToolTip" Grid.Column="0" />
+                <CheckBox  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" IsChecked="{Binding EnableToolTip, Mode=TwoWay}"  Margin="5" Name="tooltip" Grid.Column="1" />
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
