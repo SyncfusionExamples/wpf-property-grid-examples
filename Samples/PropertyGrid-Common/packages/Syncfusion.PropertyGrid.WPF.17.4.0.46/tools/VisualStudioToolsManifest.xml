@@ -1,0 +1,8 @@
+<FileList>
+<File Reference="Syncfusion.PropertyGrid.WPF.dll">
+	<ContainsControls>True</ContainsControls>
+	<ToolboxItems VSCategory="Syncfusion Controls for WPF" BlendCategory="Syncfusion Controls for WPF">
+		<Item Type="Syncfusion.Windows.PropertyGrid.PropertyGrid"/>
+	</ToolboxItems>
+</File>
+</FileList>
