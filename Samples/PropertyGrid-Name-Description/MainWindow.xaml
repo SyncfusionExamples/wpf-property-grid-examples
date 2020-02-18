@@ -22,6 +22,7 @@
                                          DescriptionPanelVisibility="{Binding DescriptionPanelVisibility, Mode=TwoWay}" 
                                          DescriptionPanelHeight="50"                                      
                                          SelectedObject="{Binding SelectedEmployee}"
+                                         DefaultPropertyPath="Age"
                                          Width="350"
                                          Height="350" >
                 </syncfusion:PropertyGrid>

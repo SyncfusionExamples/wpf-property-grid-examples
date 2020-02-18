@@ -10,7 +10,7 @@
     <Grid>
         <syncfusion:PropertyGrid HidePropertiesCollection="{Binding HidePropertyItems}" 
                          SelectedObject="{Binding SelectedEmployee}" 
-                         x:Name="propertyGrid1">
+                         x:Name="propertyGrid1" Height="250" Width="400">
             <syncfusion:PropertyGrid.DataContext>
                 <local:ViewModel></local:ViewModel>
             </syncfusion:PropertyGrid.DataContext>
