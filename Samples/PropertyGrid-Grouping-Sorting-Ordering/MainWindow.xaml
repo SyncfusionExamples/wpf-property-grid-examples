@@ -18,10 +18,11 @@
         </Grid.ColumnDefinitions>
 
         <Border Margin="0"  Grid.Row="1">
-            <Grid>
+            <Grid> 
                 <syncfusion:PropertyGrid x:Name="propertyGrid1" Margin="20"
                                          SelectedObject="{Binding SelectedEmployee}"
                                          BorderThickness="1" Background="White"                                        
+                                         ButtonPanelVisibility="{Binding ButtonPanelVisibility, Mode=TwoWay}"
                                          SearchBoxVisibility="{Binding SearchBoxVisibility, Mode=TwoWay}"
                                          EnableGrouping="{Binding EnableGrouping , Mode=TwoWay}"
                                          VerticalAlignment="Stretch"  
@@ -48,10 +49,16 @@
                 <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="0" Grid.Column="1" SelectedValue="{Binding SearchBoxVisibility, Mode=TwoWay}"  SelectedIndex="0" Margin="3" Name="search" >
                     <Visibility>Visible</Visibility>
                     <Visibility>Collapsed</Visibility>
+                </ComboBox> 
+                
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Group and Sort button Visibility"  Grid.Row="1" />
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="1" Grid.Column="1" SelectedValue="{Binding ButtonPanelVisibility, Mode=TwoWay}"  SelectedIndex="0" Margin="3" Name="buttons" >
+                    <Visibility>Visible</Visibility>
+                    <Visibility>Collapsed</Visibility>
                 </ComboBox>
 
-                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Sorting Direction"  Grid.Row="1"  Grid.Column="0"/>
-                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="1" Grid.Column="1"  SelectedIndex="1" Margin="3" Name="sorting"  >
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Sorting Direction"  Grid.Row="2"  Grid.Column="0"/>
+                <ComboBox FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="2" Grid.Column="1"  SelectedIndex="1" Margin="3" Name="sorting"  >
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <local:OrderingAction TargetObject="{Binding ElementName=propertyGrid1}"/>
@@ -62,8 +69,8 @@
                     <ComboBoxItem>Descending</ComboBoxItem>
                 </ComboBox>
 
-                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Enable Grouping"  Grid.Row="2"  Grid.Column="0"/>
-                <CheckBox  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="2" Grid.Column="1" IsChecked="{Binding EnableGrouping, Mode=TwoWay}"  Margin="5" Name="grouping"  />
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="Enable Grouping"  Grid.Row="3"  Grid.Column="0"/>
+                <CheckBox  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="3" Grid.Column="1" IsChecked="{Binding EnableGrouping, Mode=TwoWay}"  Margin="5" Name="grouping"  />
             </Grid>
         </GroupBox>
     </Grid>

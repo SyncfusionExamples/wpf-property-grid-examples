@@ -7,6 +7,7 @@ namespace Grouping_Sorting_Ordering
     public class ViewModel : NotificationObject
     {
         private Visibility searchBoxVisibility;
+        private Visibility buttonPanelVisibility;
         private Object selectedEmployee;
         private bool enableGrouping;
 
@@ -17,6 +18,15 @@ namespace Grouping_Sorting_Ordering
             {
                 searchBoxVisibility = value;
                 this.RaisePropertyChanged(nameof(SearchBoxVisibility));
+            }
+        }
+        public Visibility ButtonPanelVisibility
+        {
+            get { return buttonPanelVisibility; }
+            set
+            {
+                buttonPanelVisibility = value;
+                this.RaisePropertyChanged(nameof(ButtonPanelVisibility));
             }
         }
         public bool EnableGrouping
