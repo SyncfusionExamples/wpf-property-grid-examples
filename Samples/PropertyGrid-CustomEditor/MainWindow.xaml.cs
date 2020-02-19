@@ -14,14 +14,6 @@ namespace PropertyGrid_CustomEditor
         public MainWindow()
         {
             InitializeComponent();
-
-            //Assigning Custom Editor for the integer type properies.
-            CustomEditor editor1 = new CustomEditor();
-            editor1.Editor = new IntegerEditor();
-            editor1.HasPropertyType = true;
-            editor1.PropertyType = typeof(int);
-            this.propertyGrid1.CustomEditorCollection.Add(editor1);
-            this.DataContext = new ViewModel();
         }
     }
 }

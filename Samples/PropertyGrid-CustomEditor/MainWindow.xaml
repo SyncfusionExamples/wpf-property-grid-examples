@@ -11,6 +11,6 @@
         <local:ViewModel></local:ViewModel>
     </Window.DataContext>
     <Grid>
-        <syncfusion:PropertyGrid x:Name="propertyGrid1" SelectedObject="{Binding SelectedEmployee}" Height="200" Width="400" ></syncfusion:PropertyGrid>
+        <syncfusion:PropertyGrid x:Name="propertyGrid1" CustomEditorCollection="{Binding CustomEditorCollection}" SelectedObject="{Binding SelectedEmployee}" Height="200" Width="400" ></syncfusion:PropertyGrid>
     </Grid>
 </Window>
