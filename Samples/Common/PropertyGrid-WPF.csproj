@@ -81,6 +81,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="Utills\AutoGeneratingPropertyGridItemEvent.cs" />
     <Compile Include="Utills\OrderingAction.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
@@ -98,7 +99,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
