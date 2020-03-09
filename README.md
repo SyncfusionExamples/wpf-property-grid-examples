@@ -1,6 +1,6 @@
 # PropertyGrid control samples
 
-This repository contains the samples that demonstrate the functionalities of PropertyGrid like the following features.
+This repository contains the samples that demonstrate the functionalities of PropertyGrid.
 
 <table>
  <tr>
@@ -18,8 +18,10 @@ This repository contains the samples that demonstrate the functionalities of Pro
   <tr>
   <td><a href="Samples/HidePropertyByAttribute">HideProperty using Attribute</a></td>
   <td><a href="Samples/HidePropertyByCollection">HideProperty using Collection</a></td>
-  <td><a href="Samples/AutoGeneratingPropertyGridItem event">AutoGeneratingPropertyGridItem event</a></td>
   <td><a href="Samples/Apperance">Apperance</a></td>
   <td><a href="Samples/Themes">Themes</a></td>
+ <tr>
+ </tr>
+  <td><a href="Samples/AutoGeneratingPropertyGridItem event">AutoGeneratingPropertyGridItem event</a></td>
  </tr>
 </table>
