@@ -4,7 +4,7 @@ This repository contains the samples that demonstrate the functionalities of Pro
 
 <table>
  <tr>
-  <td><a href="Samples/Common">Over all features</a></td>
+  <td><a href="Samples/Common">Getting Started</a></td>
   <td><a href="Samples/BindingObject">Object Binding</a></td>
   <td><a href="Samples/CategoryEditor">CategoryEditor Support</a></td>
   <td><a href="Samples/CustomEditor">CustomEditor Support</a></td>  
