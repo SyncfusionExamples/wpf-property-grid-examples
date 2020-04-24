@@ -12,6 +12,7 @@ This repository contains the samples that demonstrate the functionalities of Pro
   <tr>
   <td><a href="Samples/Name-Description">Naming and Description about the Properties</a></td>
   <td><a href="Samples/Grouping-Sorting-Ordering">Grouping-Sorting-Ordering</a></td>
+  <td><a href="Samples/Attached-properties">Attached Properties</a></td>
   <td><a href="Samples/Nested_Properties">Nested Properties</a></td>
   <td><a href="Samples/ReadOnlyProperty">ReadOnly Properties</a></td>
   </tr>

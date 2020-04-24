@@ -1,0 +1,28 @@
+﻿<Window x:Class="Attached_properties_example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Attached_properties_example"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Attached Properties" Height="500" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+
+        <syncfusion:PropertyGrid Margin="10" SelectedObject="{Binding ElementName=button}" 
+                             AutoGeneratingPropertyGridItem="PropertyGrid_AutoGeneratingPropertyGridItem"/>
+        <syncfusion:ButtonAdv Label="SelectedObject" Name="button" 
+                                     Margin="10" 
+                                     Height="25" 
+                                     Width="200" 
+                                     HorizontalAlignment="Center" 
+                                     VerticalAlignment="Center"
+                                     Grid.Column="1" 
+                                     syncfusion:SkinStorage.VisualStyle="Default" />
+    </Grid>
+</Window>
