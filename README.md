@@ -24,7 +24,7 @@ This repository contains the samples that demonstrate the functionalities of Pro
  <tr>
   <td><a href="Samples/AutoGeneratingPropertyGridItem event">AutoGeneratingPropertyGridItem event</a></td>
   <td><a href="Samples/AutoGeneratingPropertyGridItem_NestedMode">Specific property nestedmode using event</a></td>
-  
+  <td><a href="Samples/Attribute_NestedMode">Specific property nestedmode using Attribute</a></td>
   <td><a href="Samples/Mask_Attributes">Restrict input using MaskAttributes</a></td>
   <td><a href="Samples/Mask_Editors">Restrict input using MaskEditor</a></td>
  </tr>
