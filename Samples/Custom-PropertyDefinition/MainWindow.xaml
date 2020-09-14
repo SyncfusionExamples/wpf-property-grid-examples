@@ -1,0 +1,65 @@
+﻿<Window x:Class="Custom_PropertyDefinition.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Custom_PropertyDefinition"
+         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="PropertyGrid - Custom PropertyDefinition" Height="450" Width="600">
+    <Grid >
+        <syncfusion:PropertyGrid AutoGenerateItems="False"
+                                 Margin="30"
+                                 PropertyExpandMode="NestedMode"
+                                 DescriptionPanelVisibility="Visible"
+                                 SelectedObject="{Binding SelectedEmployee}"
+                                 x:Name="propertyGrid1">
+            <syncfusion:PropertyGrid.DataContext>
+                <local:ViewModel></local:ViewModel>
+            </syncfusion:PropertyGrid.DataContext>
+            <syncfusion:PropertyGrid.Items>
+                <syncfusion:PropertyGridItem PropertyName="Name"
+                                             DisplayName="Employee Name"
+                                             CategoryName="Basic Info"
+                                             Description="Name of the employee"/>
+                <syncfusion:PropertyGridItem PropertyName="ID"
+                                             IsReadOnly="True"
+                                             CategoryName="Basic Info"
+                                             DisplayName="Employee ID"
+                                             Description="ID of the employee"/>
+
+                <syncfusion:PropertyGridItem PropertyName="DOB"
+                                             Description="Birth date of the employee"
+                                             CategoryName="Basic Info"
+                                             NestedPropertyDisplayMode="Show">
+                    <syncfusion:PropertyGridItem.Items>
+                        <syncfusion:PropertyGridItem PropertyName="Day"/>
+                        <syncfusion:PropertyGridItem PropertyName="Month"/>
+                        <syncfusion:PropertyGridItem PropertyName="Year"/>
+                    </syncfusion:PropertyGridItem.Items>
+                </syncfusion:PropertyGridItem>
+                <syncfusion:PropertyGridItem PropertyName="EmailID"
+                                             Description="Email-ID of the employee"
+                                             CategoryName="Additional Info">
+                    <!--Adding own value editor for the EmailID property-->
+                    <syncfusion:PropertyGridItem.Editor>
+                        <local:EmailEditor/>
+                    </syncfusion:PropertyGridItem.Editor>
+                </syncfusion:PropertyGridItem>
+            </syncfusion:PropertyGrid.Items>
+        </syncfusion:PropertyGrid>
+        <StackPanel Margin="458,164,14,-164">
+            <Button x:Name="addItems" Background="White" Margin="3"
+                Click="AddItems_Click"
+                Content="Add Items" />
+
+            <Button x:Name="removeItems" Background="White" Margin="3"
+                Click="RemoveItems_Click"
+                Content="Remove Items" />
+            <Button x:Name="ClearItems" Background="White" Margin="3"
+                Click="ClearItems_Click"
+                Content="Clear Items" />
+        </StackPanel>
+    </Grid>
+</Window>
+

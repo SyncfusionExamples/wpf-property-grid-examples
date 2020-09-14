@@ -19,7 +19,7 @@ This repository contains the samples that demonstrate the functionalities of Pro
    
   </tr>
   <tr>
-  <td><a href="Samples/ReadOnlyProperty">ReadOnly Properties</a></td>
+  <td><a href="Samples/Custom-PropertyDefinition">Custom Property Definition</a></td>
   <td><a href="Samples/HidePropertyByAttribute">HideProperty using Attribute</a></td>
   <td><a href="Samples/HidePropertyByCollection">HideProperty using Collection</a></td>
   <td><a href="Samples/Apperance">Apperance</a></td> 
@@ -32,8 +32,10 @@ This repository contains the samples that demonstrate the functionalities of Pro
   <td><a href="Samples/Mask_Attributes">Restrict input using MaskAttributes</a></td>
   <td><a href="Samples/Mask_Editors">Restrict input using MaskEditor</a></td>
  </tr>
- <tr>
+ <tr> 
+  <td><a href="Samples/ReadOnlyProperty">ReadOnly Properties</a></td>
  <td><a href="Samples/Localization">Localization</a></td>
  <td><a href="Samples/Themes">Themes</a></td>
+
  </tr>
 </table>
