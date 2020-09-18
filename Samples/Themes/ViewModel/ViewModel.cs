@@ -54,8 +54,13 @@ namespace PropertyGrid_Themes
         public ViewModel()
         {
             SelectedEmployee = new Employee() { Name = "John Son", Age = 25, DOB = new DateTime(1995, 12, 28),  Address="New yark", Experience = 5, Gender = Gender.Male,  EmployeeType= EmployeeType.Fulltime_Employee, Id="56", MobileNo = "4556789", EmailID = "john@gta.com" };
+            //Theme list  added in the collection
             Themes.Add("Blend");
             Themes.Add("Lime");
+            Themes.Add("MaterialDark");
+            Themes.Add("MaterialDarkBlue");
+            Themes.Add("MaterialLight");
+            Themes.Add("MaterialLightBlue");
             Themes.Add("Metro");
             Themes.Add("Office2010Black");
             Themes.Add("Office2010Blue");
@@ -66,6 +71,8 @@ namespace PropertyGrid_Themes
             Themes.Add("Office2016Colorful");
             Themes.Add("Office2016DarkGray");
             Themes.Add("Office2016White");
+            Themes.Add("Office2019Black");
+            Themes.Add("Office2019Colorful");
             Themes.Add("Office365");
             Themes.Add("Saffron");
             Themes.Add("VisualStudio2013");
