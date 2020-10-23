@@ -19,6 +19,9 @@ namespace PropertyGrid_WPF
         private bool enableGrouping;
         private PropertyExpandModes propertyExpandMode;
         private bool enableToolTip;     
+        private GridLength propertyNameColumnDefinition =new GridLength(100);  
+        
+
 
         public Visibility DescriptionPanelVisibility
         {
@@ -27,6 +30,16 @@ namespace PropertyGrid_WPF
             {
                 descriptionPanelVisibility = value;
                 this.RaisePropertyChanged(nameof(DescriptionPanelVisibility));
+            }
+        }
+        
+        public GridLength PropertyNameColumnDefinition
+        {
+            get { return propertyNameColumnDefinition; }
+            set
+            {
+                propertyNameColumnDefinition = value;
+                this.RaisePropertyChanged(nameof(PropertyNameColumnDefinition));
             }
         }
 

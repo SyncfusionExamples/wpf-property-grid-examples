@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Windows;
 
 namespace PropertyGrid_WPF
 {
@@ -16,5 +19,15 @@ namespace PropertyGrid_WPF
             InitializeComponent();
         }
     }
-    
+
+    public class TestClassConverter : TypeConverter
+    {
+        public override object ConvertTo(ITypeDescriptorContext context,
+        CultureInfo culture, object value, Type destinationType)
+        {
+            if (destinationType == typeof(string)) { return "___"; }
+            return base.ConvertTo(context, culture, value, destinationType);
+        }
+    }
+
 }
