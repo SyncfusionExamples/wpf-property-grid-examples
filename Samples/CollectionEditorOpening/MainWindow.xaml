@@ -4,9 +4,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CollectionEditorOpening"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="PropertyGrid - CollectionEditorOpening" Height="450" Width="800">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <syncfusion:PropertyGrid SelectedObject="{Binding DemoProduct}" 
+                                 Margin="50"
+                                 x:Name="propertyGrid">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="CollectionEditorOpening">
+                    <i:InvokeCommandAction Command="{Binding CollectionEditorOpeningCommand}" 
+                                           CommandParameter="{Binding ElementName=propertyGrid}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </syncfusion:PropertyGrid>
+        <GroupBox Grid.Column="1"
+                  VerticalAlignment="Center" 
+                  HorizontalAlignment="Center"
+                  Margin="50"
+                  Header="ColloctionEditor options"
+                  FontWeight="Bold">
+            <StackPanel VerticalAlignment="Center" 
+                        HorizontalAlignment="Center">
+                <CheckBox Content="Make Collection Properties as Readonly" IsChecked="{Binding IsReadOnly, Mode=TwoWay}" 
+                          VerticalAlignment="Center" 
+                          HorizontalAlignment="Left"
+                          Margin="10"/>                
+                <CheckBox Content="Restrict CollectionEditor Opening" IsChecked="{Binding RestrictOpening, Mode=TwoWay}"
+                          VerticalAlignment="Center" 
+                          HorizontalAlignment="Left"
+                          Margin="10"/>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>

@@ -12,6 +12,9 @@
     <Window.DataContext>
         <local:ViewModel></local:ViewModel>
     </Window.DataContext>
+    <Window.Resources>
+        <local:DoubleToGridLengthConverter x:Key="doubleToGridLengthConverter"/>
+    </Window.Resources>
 
     <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
@@ -25,7 +28,8 @@
                                          SelectedObject="{Binding SelectedEmployee}"
                                          HorizontalAlignment="Stretch"
                                          BorderThickness="1" Background="White"
-                                         PropertyNameColumnDefinition="{Binding PropertyNameColumnDefinition, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"                                         
+                                         PropertyNameColumnDefinition="{Binding PropertyNameColumnDefinition, 
+                                                                                Mode=TwoWay, Converter={StaticResource doubleToGridLengthConverter}}"                                         
                                          EnableToolTip="{Binding EnableToolTip, Mode=TwoWay}"                                         
                                          ButtonPanelVisibility="{Binding ButtonPanelVisibility, Mode=TwoWay}"                                          
                                          SearchBoxVisibility="{Binding SearchBoxVisibility, Mode=TwoWay}"
@@ -119,8 +123,8 @@
                 <CheckBox  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="7" Grid.Column="1" IsChecked="{Binding EnableToolTip, Mode=TwoWay}"  Margin="5" Name="tooltip"  />
             
                 <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="PropertyName Column Width"  Grid.Row="8"  Grid.Column="0"/>
-                <syncfusion:DoubleTextBox FontWeight="Normal" MinValue="0" MaxValue="100" FontFamily="Segoe UI" FontSize="13" Grid.Row="8" Grid.Column="1" 
-                                          Value="{Binding PropertyNameColumnDefinition, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5" Name="propertyNameDefinition"/>
+                <syncfusion:DoubleTextBox FontWeight="Normal" MinValue="0" MaxValue="250" FontFamily="Segoe UI" FontSize="13" Grid.Row="8" Grid.Column="1" 
+                                          Value="{Binding PropertyNameColumnDefinition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" Name="propertyNameDefinition"/>
 
 
             </Grid>

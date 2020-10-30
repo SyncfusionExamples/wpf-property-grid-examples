@@ -33,6 +33,8 @@ This repository contains the samples that demonstrate the functionalities of Pro
   <td><a href="Samples/Mask_Editors">Restrict input using MaskEditor</a></td>
  </tr>
  <tr> 
+  <td><a href="Samples/CollectionEditorOpening">Restrict Collection editor opening</a></td>
+  <td><a href="Samples/CollectionEditorOpening">Make collection type property as ReadOnly</a></td>
   <td><a href="Samples/ReadOnlyProperty">ReadOnly Properties</a></td>
  <td><a href="Samples/Localization">Localization</a></td>
  <td><a href="Samples/Themes">Themes</a></td>

@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\DoubleToGridLengthConverter.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Utills\AutoGeneratingPropertyGridItemEvent.cs" />
