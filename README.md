@@ -38,6 +38,8 @@ This repository contains the samples that demonstrate the functionalities of Pro
   <td><a href="Samples/ReadOnlyProperty">ReadOnly Properties</a></td>
  <td><a href="Samples/Localization">Localization</a></td>
  <td><a href="Samples/Themes">Themes</a></td>
-
+ </tr>
+  <tr> 
+  <td><a href="Samples/ Built-in-Mask"> Built-in Mask</a></td>
  </tr>
 </table>

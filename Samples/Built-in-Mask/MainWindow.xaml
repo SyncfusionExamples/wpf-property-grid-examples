@@ -1,0 +1,20 @@
+﻿<Window x:Class="Built_in_Mask.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Built_in_Mask" 
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="PropertyGrid - Built-in Mask" Height="600" Width="600">
+    <Grid>
+        <syncfusion:PropertyGrid SelectedObject="{Binding BuiltInMask}"
+                                 DescriptionPanelVisibility="Visible"
+                                 x:Name="propertyGrid"
+                                 Margin="30">
+            <syncfusion:PropertyGrid.DataContext>
+                <local:BuiltInMaskViewModel/>
+            </syncfusion:PropertyGrid.DataContext>
+        </syncfusion:PropertyGrid>
+    </Grid>
+</Window>
