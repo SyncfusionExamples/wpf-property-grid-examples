@@ -36,6 +36,7 @@
                                          PropertyExpandMode="{Binding PropertyExpandMode, Mode=TwoWay}"
                                          DescriptionPanelVisibility="{Binding DescriptionPanelVisibility, Mode=TwoWay}" 
                                          EnableGrouping="{Binding EnableGrouping , Mode=TwoWay}"
+                                         DisableAnimationOnObjectSelection="{Binding DisableAnimationOnObjectSelection , Mode=TwoWay}"                                        
                                          VerticalAlignment="Stretch"  
                                          DefaultPropertyPath="Name" Grid.Row="2" >
                     <i:Interaction.Behaviors>
@@ -64,6 +65,7 @@
         <GroupBox Margin="0,0,3,3" FontWeight="Bold" FontSize="14" FontFamily="Segoe UI" Grid.Column="1" BorderBrush="Silver" Header="User Options">
             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -125,6 +127,9 @@
                 <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="PropertyName Column Width"  Grid.Row="8"  Grid.Column="0"/>
                 <syncfusion:DoubleTextBox FontWeight="Normal" MinValue="0" MaxValue="250" FontFamily="Segoe UI" FontSize="13" Grid.Row="8" Grid.Column="1" 
                                           Value="{Binding PropertyNameColumnDefinition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5" Name="propertyNameDefinition"/>
+
+                <TextBlock FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Margin="3" Text ="DisableAnimation OnObjectSelection"  Grid.Row="9"  Grid.Column="0"/>
+                <CheckBox  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="9" Grid.Column="1" IsChecked="{Binding DisableAnimationOnObjectSelection, Mode=TwoWay}"  Margin="5" Name="disableAnimationOnObjectSelection"  />
 
 
             </Grid>

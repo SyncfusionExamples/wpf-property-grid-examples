@@ -17,9 +17,10 @@ namespace PropertyGrid_WPF
         private Visibility searchBoxVisibility;
         private ListSortDirection sortDirection;
         private bool enableGrouping;
+        private bool disableAnimationOnObjectSelection=true;
         private PropertyExpandModes propertyExpandMode;
         private bool enableToolTip;     
-        private double propertyNameColumnDefinition =100;       
+        private double propertyNameColumnDefinition =200;       
 
 
         public Visibility DescriptionPanelVisibility
@@ -89,6 +90,16 @@ namespace PropertyGrid_WPF
             {
                 enableToolTip = value;
                 this.RaisePropertyChanged(nameof(EnableToolTip));
+            }
+        }
+        
+        public bool DisableAnimationOnObjectSelection
+        {
+            get { return disableAnimationOnObjectSelection; }
+            set
+            {
+                disableAnimationOnObjectSelection = value;
+                this.RaisePropertyChanged(nameof(DisableAnimationOnObjectSelection));
             }
         }
 
