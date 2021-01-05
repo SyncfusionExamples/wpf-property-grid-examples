@@ -7,13 +7,14 @@
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="300" Width="500">
+        Title="MainWindow" Height="400" Width="500">
 
 
     <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <syncfusion:PropertyGrid SelectedObject="{Binding IsAsync=True, Path=SelectedEmployee}"
                                  SortDirection="{x:Null}"
                                  ButtonPanelVisibility="Visible"
+                                 DescriptionPanelVisibility="Visible"
                                  x:Name="propertyGrid1" 
                                  Margin="20">
             <syncfusion:PropertyGrid.DataContext>

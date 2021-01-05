@@ -20,11 +20,29 @@
             <Grid>
                 <syncfusion:PropertyGrid x:Name="propertyGrid1"
                                          DescriptionPanelVisibility="{Binding DescriptionPanelVisibility, Mode=TwoWay}" 
-                                         DescriptionPanelHeight="50"                                      
-                                         SelectedObject="{Binding SelectedEmployee}"
+                                         DescriptionPanelHeight="50"
                                          DefaultPropertyPath="Age"
                                          Width="350"
                                          Height="350" >
+                    <syncfusion:PropertyGrid.DescriptionTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock 
+                                    Text="{Binding Name}" 
+                                    FontSize="16" 
+                                    Foreground="Red" 
+                                    TextWrapping="Wrap"/>
+                                <TextBlock 
+                                    Text="{Binding Description}"
+                                    FontSize="14" 
+                                    Foreground="Green" 
+                                    TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </syncfusion:PropertyGrid.DescriptionTemplate>
+                    <syncfusion:PropertyGrid.SelectedObject>
+                        <local:Employee></local:Employee>
+                    </syncfusion:PropertyGrid.SelectedObject>
                 </syncfusion:PropertyGrid>
             </Grid>
         </Border>

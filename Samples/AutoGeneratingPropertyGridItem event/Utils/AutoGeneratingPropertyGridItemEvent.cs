@@ -106,6 +106,16 @@ namespace PropertyGrid_AutoGeneratingPropertyGridItem
         }
         public void Execute(object parameter)
         {
+
+
+            if ((parameter as AutoGeneratingPropertyGridItemEventArgs).DisplayName == "Name" || (parameter as AutoGeneratingPropertyGridItemEventArgs).DisplayName == "DOB")
+            {
+                (parameter as AutoGeneratingPropertyGridItemEventArgs).DescriptionTemplate = Application.Current.Resources["template1"] as DataTemplate;
+            }
+            else if ((parameter as AutoGeneratingPropertyGridItemEventArgs).DisplayName == "ID" || (parameter as AutoGeneratingPropertyGridItemEventArgs).DisplayName == "Age")
+            {
+                (parameter as AutoGeneratingPropertyGridItemEventArgs).DescriptionTemplate = Application.Current.Resources["template2"] as DataTemplate;
+            }
             if ((parameter as AutoGeneratingPropertyGridItemEventArgs).DisplayName == "Address")
             {
                 //Address property hided from the PropertyGrid.

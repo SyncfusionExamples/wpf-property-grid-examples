@@ -26,6 +26,7 @@ namespace PropertyGrid_AutoGeneratingPropertyGridItem
             SelectedEmployee = new Employee()
             {
                 Name = "John",
+                Age=35,
                 ID = "381",
                 DOB = new DateTime(1995, 12, 24),
                 Exp = 5,

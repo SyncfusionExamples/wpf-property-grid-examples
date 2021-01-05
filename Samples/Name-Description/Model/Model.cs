@@ -40,6 +40,17 @@ namespace PropertyGrid_Name_Description
         [Display(Name = "Experience")]
         [Description("Experience of the Employee")]
         public int Exp { get; set; }
+        public Employee()
+        {
+            Name = "John";
+            ID = "381";
+            DOB = new DateTime(1995, 12, 24);
+            Add = "New Yark";
+            Age = 30;
+            Exp = 3;
+            Gen = Gender.Male;
+            Mail = "john@gta.com";
+        }
     }
     public enum Gender
     {

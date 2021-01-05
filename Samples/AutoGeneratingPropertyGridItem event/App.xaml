@@ -4,6 +4,33 @@
              xmlns:local="clr-namespace:PropertyGrid_AutoGeneratingPropertyGridItem"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate x:Key="template1">
+            <StackPanel>
+                <TextBlock 
+                            Text="{Binding Name}" 
+                            FontSize="16" 
+                            Foreground="Red" 
+                            TextWrapping="Wrap"/>
+                <TextBlock 
+                            Text="{Binding Description}"
+                            FontSize="14" 
+                            Foreground="Green" 
+                            TextWrapping="Wrap"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="template2">
+            <StackPanel>
+                <TextBlock 
+                            Text="{Binding Name}" 
+                            FontSize="16" 
+                            Foreground="BlueViolet" 
+                            TextWrapping="Wrap"/>
+                <TextBlock 
+                            Text="{Binding Description}"
+                            FontSize="14" 
+                            Foreground="DarkCyan" 
+                            TextWrapping="Wrap"/>
+            </StackPanel>
+        </DataTemplate>
     </Application.Resources>
 </Application>
