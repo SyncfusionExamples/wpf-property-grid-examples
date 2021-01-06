@@ -7,7 +7,37 @@
          xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="PropertyGrid - Custom PropertyDefinition" Height="450" Width="600">
-    <Grid >
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="template1">
+                <StackPanel>
+                    <TextBlock 
+                        Text="{Binding Name}" 
+                        FontSize="16" 
+                        Foreground="Red" 
+                        TextWrapping="Wrap"/>
+                    <TextBlock 
+                        Text="{Binding Description}"
+                        FontSize="14" 
+                        Foreground="Green" 
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="template2">
+                <StackPanel>
+                    <TextBlock 
+                        Text="{Binding Name}" 
+                        FontSize="16" 
+                        Foreground="BlueViolet" 
+                        TextWrapping="Wrap"/>
+                    <TextBlock 
+                        Text="{Binding Description}"
+                        FontSize="14" 
+                        Foreground="DarkCyan" 
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
         <syncfusion:PropertyGrid AutoGenerateItems="False"
                                  Margin="30"
                                  PropertyExpandMode="NestedMode"
@@ -21,16 +51,19 @@
                 <syncfusion:PropertyGridItem PropertyName="Name"
                                              DisplayName="Employee Name"
                                              CategoryName="Basic Info"
+                                             DescriptionTemplate="{StaticResource template1}"
                                              Description="Name of the employee"/>
                 <syncfusion:PropertyGridItem PropertyName="ID"
                                              IsReadOnly="True"
                                              CategoryName="Basic Info"
                                              DisplayName="Employee ID"
+                                             DescriptionTemplate="{StaticResource template2}"
                                              Description="ID of the employee"/>
 
                 <syncfusion:PropertyGridItem PropertyName="DOB"
                                              Description="Birth date of the employee"
                                              CategoryName="Basic Info"
+                                             DescriptionTemplate="{StaticResource template1}"
                                              NestedPropertyDisplayMode="Show">
                     <syncfusion:PropertyGridItem.Items>
                         <syncfusion:PropertyGridItem PropertyName="Day"/>
@@ -48,18 +81,6 @@
                 </syncfusion:PropertyGridItem>
             </syncfusion:PropertyGrid.Items>
         </syncfusion:PropertyGrid>
-        <StackPanel Margin="458,164,14,-164">
-            <Button x:Name="addItems" Background="White" Margin="3"
-                Click="AddItems_Click"
-                Content="Add Items" />
-
-            <Button x:Name="removeItems" Background="White" Margin="3"
-                Click="RemoveItems_Click"
-                Content="Remove Items" />
-            <Button x:Name="ClearItems" Background="White" Margin="3"
-                Click="ClearItems_Click"
-                Content="Clear Items" />
-        </StackPanel>
     </Grid>
 </Window>
 
