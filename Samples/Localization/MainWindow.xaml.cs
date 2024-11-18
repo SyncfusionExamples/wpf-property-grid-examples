@@ -22,10 +22,9 @@ namespace Localization
     {
         public MainWindow()
         {
-            InitializeComponent();
-
             //Changing current culture as French culture
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
+            InitializeComponent();
         }
     }
 }

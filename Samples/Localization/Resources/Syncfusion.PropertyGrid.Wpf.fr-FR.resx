@@ -134,15 +134,15 @@
     <comment>Tooltip text for button, to categorize properties in PropertyGrid.</comment>
   </data>
   <data name="Clear" xml:space="preserve">
-    <value>Claire</value>
+    <value>clair</value>
     <comment>Tooltip text for clear button of search box in PropertyGrid.</comment>
   </data>
   <data name="CollectionEditorDialogTitle" xml:space="preserve">
-    <value>L'CollectionEditor</value>
+    <value>Éditeur de collection</value>
     <comment>Title text of CollectionEditor dialog.</comment>
   </data>
   <data name="CollectionEditorWatermark" xml:space="preserve">
-    <value>(L'Collection)</value>
+    <value>(Collection)</value>
     <comment>Watermark text of collection editor in PropertyGrid.</comment>
   </data>
   <data name="OK" xml:space="preserve">
@@ -150,7 +150,7 @@
     <comment>OK button text in CollectionEditor dialog.</comment>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Retirer</value>
+    <value>Enlever</value>
     <comment>Remove button text in CollectionEditor dialog.</comment>
   </data>
   <data name="Reset" xml:space="preserve">
@@ -158,7 +158,7 @@
     <comment>Text for menu item, to reset value of property in PropertyGrid.</comment>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Chercher</value>
+    <value>Recherche</value>
     <comment>Watermark text of search textbox in PropertyGrid.</comment>
   </data>
 </root>
