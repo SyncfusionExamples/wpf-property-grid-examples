@@ -1,6 +1,6 @@
 # PropertyGrid control samples
 
-This repository contains the samples that demonstrate the functionalities of PropertyGrid.
+This repository contains the samples that demonstrate the functionalities of PropertyGrid
 
 <table>
  <tr>
