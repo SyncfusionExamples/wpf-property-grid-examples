@@ -36,7 +36,7 @@ namespace Built_in_Mask
             BuiltInMask.NumberMaskProperty = "-8728";
             BuiltInMask.OctalMaskProperty = "/012";
             BuiltInMask.PositiveNumberMaskProperty = "3721972";
-            BuiltInMask.ProductKeyMaskProperty = "HTY23OPY678GR56R01G564GH";
+            BuiltInMask.ProductKeyMaskProperty = " ";
         }
     }
 }
